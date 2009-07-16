@@ -36,6 +36,7 @@ Rails::Initializer.run do |config|
   config.gem 'flickr'
   config.gem 'thoughtbot-paperclip', :version => '2.3.0', :lib => 'paperclip'
   config.gem 'josevalim-rails-footnotes', :lib => 'rails-footnotes'
+  config.gem 'RedCloth', :version => '4.2.2'
   
 end
 

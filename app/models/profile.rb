@@ -78,13 +78,20 @@ class Profile < ActiveRecord::Base
     set_property :min_prefix_len => 3, :morphology => false
   end
   
-  file_column :icon, :magick => {
-    :versions => { 
-      :big => {:crop => "1:1", :size => "150x150", :name => "big"},
-      :medium => {:crop => "1:1", :size => "100x100", :name => "medium"},
-      :small => {:crop => "1:1", :size => "50x50", :name => "small"}
-    }
-  }
+  
+  has_attached_file :icon, 
+    :styles => { :small => ["50x50>", :jpg], :medium => ["100x100", :jpg], :big => ["150x150"], :original => ["1024x768", :jpg]  }, 
+    :convert_options => { :small => "-strip -quality 60", :medium => "-strip -quality 60", :big => "-strip -quality 75", :original => "-strip -quality 75" }
+  validates_attachment_content_type :icon, :content_type => ['image/jpeg', 'image/pjpeg', 'image/gif', 'image/png', 'image/x-png', 'image/jpg']
+  validates_attachment_size :icon, :in => 0.kilobytes..4096.kilobytes
+  
+  # file_column :icon, :magick => {
+  #   :versions => { 
+  #     :big => {:crop => "1:1", :size => "150x150", :name => "big"},
+  #     :medium => {:crop => "1:1", :size => "100x100", :name => "medium"},
+  #     :small => {:crop => "1:1", :size => "50x50", :name => "small"}
+  #   }
+  # }
   
   cattr_accessor :featured_profile
   @@featured_profile = {:date=>Date.today-4, :profile=>nil}

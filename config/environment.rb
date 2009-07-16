@@ -33,10 +33,8 @@ Rails::Initializer.run do |config|
   config.gem 'hpricot', :version=> '0.8.1'
   config.gem 'mocha', :version=> '0.9.3'
   config.gem 'redgreen', :version=> '1.2.2' unless ENV['TM_MODE']
-  config.gem 'gcnovus-avatar', :version=> '0.0.7', :lib => 'avatar'
   config.gem 'flickr'
   config.gem 'thoughtbot-paperclip', :version => '2.3.0', :lib => 'paperclip'
-  config.gem 'gcnovus-avatar', :version => '0.0.7', :lib => 'avatar'
   config.gem 'josevalim-rails-footnotes', :lib => 'rails-footnotes'
   
 end

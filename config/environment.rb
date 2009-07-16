@@ -9,8 +9,8 @@ Rails::Initializer.run do |config|
   # Cookie sessions (limit = 4K)
   # WARNING: You MUST generate a new secret (use "rake secret") and add it below!
   config.action_controller.session = {
-    :session_key => '_your_app_name',
-    :secret      => '0677a17f4e94869409e7aecb29a00fd9' # <- New secret key goes here
+    :session_key => '_lovd_network',
+    :secret      => 'cfd5860aaddef97853bfa904fd3fac08842e1f83ae96d191e46c722d0d243c8985d4a86d547bb8b02b5e6024e980a2e0e433bb5a23faa956cd2762433097fda6' # <- New secret key goes here
   }
   config.action_controller.session_store = :active_record_store
 
@@ -35,6 +35,9 @@ Rails::Initializer.run do |config|
   config.gem 'redgreen', :version=> '1.2.2' unless ENV['TM_MODE']
   config.gem 'gcnovus-avatar', :version=> '0.0.7', :lib => 'avatar'
   config.gem 'flickr'
+  config.gem 'thoughtbot-paperclip', :version => '2.3.0', :lib => 'paperclip'
+  config.gem 'gcnovus-avatar', :version => '0.0.7', :lib => 'avatar'
+  config.gem 'josevalim-rails-footnotes', :lib => 'rails-footnotes'
   
 end
 

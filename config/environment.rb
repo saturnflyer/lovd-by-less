@@ -37,6 +37,7 @@ Rails::Initializer.run do |config|
   config.gem 'thoughtbot-paperclip', :version => '2.3.0', :lib => 'paperclip'
   config.gem 'josevalim-rails-footnotes', :lib => 'rails-footnotes'
   config.gem 'RedCloth', :version => '4.2.2'
+  config.gem 'freelancing-god-thinking-sphinx', :version => '1.1.24', :lib => 'thinking-sphinx'
   
 end
 

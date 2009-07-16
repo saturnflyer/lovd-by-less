@@ -5,7 +5,6 @@ namespace :gems do
       windoz = /win32/ =~ RUBY_PLATFORM
       gems = %w[
           rflickr
-          rmagick
           RedCloth
         ]
       gems << 'win32console' if windoz

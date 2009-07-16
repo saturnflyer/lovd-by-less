@@ -7,8 +7,10 @@ log/*.log
 log/*.pid
 tmp
 config/database.yml
-config/*.sphinx.conf
+config/*sphinx.conf
+config/deploy.rb
 public/system
 public/javascripts/less_routes.js
 test/public/system
 vendor/rails
+Capfile
